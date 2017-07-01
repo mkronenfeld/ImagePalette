@@ -1,29 +1,18 @@
 <?php
-/**
- * This file is part of the ImagePalette package.
- *
- * (c) Brian McDonald <brian@brianmcdonald.io>
- * (c) gandalfx - https://github.com/gandalfx
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
-namespace BrianMcdo\ImagePalette;
+namespace Makro\ImagePalette;
 
 use ArrayIterator;
-use BrianMcdo\ImagePalette\Exception\UnsupportedFileTypeException;
+use Makro\ImagePalette\Exception\UnsupportedFileTypeException;
 use Exception;
 use Imagick;
 use IteratorAggregate;
 
 /**
- * Class ImagePalette
- *
  * Gets the prominent colors in a given image. To get common color matching, all pixels are matched
  * against a white-listed color palette.
  *
- * @package BrianMcdo\ImagePalette
+ * @package Makro\ImagePalette
  */
 class ImagePalette implements IteratorAggregate
 {

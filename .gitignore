@@ -1,7 +1,7 @@
 /.idea
 /vendor
+/build
 composer.phar
+*.sublime-*
 .DS_Store
 Thumbs.db
-*.sublime-*
-/build

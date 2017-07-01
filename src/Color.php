@@ -1,23 +1,12 @@
 <?php
-/**
- * This file is part of the ImagePalette package.
- *
- * (c) Brian McDonald <brian@brianmcdonald.io>
- * (c) gandalfx - https://github.com/gandalfx
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
-namespace BrianMcdo\ImagePalette;
+namespace Makro\ImagePalette;
 
 /**
- * 
- * Represents an argb color
+ * Represents an rgb color.
  * 
  * @author  Gandalfx
- * @package BrianMcdo\ImagePalette
- * 
+ * @package Makro\ImagePalette
  */
 class Color {
     
