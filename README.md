@@ -11,7 +11,7 @@ The main advantage of working from a color palette is closer matching, as each p
 See an example of this in action here: http://alpha.wallhaven.cc/wallpaper/21852
 
 ## Requirements
-```PHP >= 7.0``` ```php7.0-gd```
+```PHP >= 5.4``` ```php5-gd```
 
 ## Installation
 
@@ -44,8 +44,15 @@ foreach ($palette as $color) {
   echo $color->int;        // 0xffffdd
   echo $color->rgb;        // array(255,255,221)
   echo $color->rgba;       // array(255,255,221,0.25)
-  // ...
 }
+```
+
+```PHP
+// initiate color mapping
+$mapping = new \Makro\ImagePalette\ColorMapping();
+
+// get the name of the nearest color 
+echo $mapping->getNearestColor($color);
 ```
 
 And there we go!
@@ -67,7 +74,16 @@ You can also provide the getter with a custom length.
 
 ```PHP
 $palette = new \Makro\ImagePalette\ImagePalette( $src, 5, 3 /* number of colors to return */ );
-$colors  = $palette->getColors(7 /* number of colors to return */);
+$colors  = $palette->getColors( 7 /* number of colors to return */ );
+```
+
+#### Custom color mapping
+
+By default, `ColorMapping` will map the provided colors according to the colors.json in this package.
+You can use a custom colors.json by setting the path to your color file as the first parameter.
+
+```PHP
+new \Makro\ImagePalette\ColorMapping( '/path/to/your/colors.json' );
 ```
 
 ## Contribution guidelines ##
