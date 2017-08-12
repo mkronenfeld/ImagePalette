@@ -23,7 +23,7 @@ class Validator
      * @access private
      * @var    array
      */
-    private $protocolErrorTranslations = [
+    protected $protocolErrorTranslations = [
         'allow_url_fopen'                      => 'Your php.ini does not allow this app to access URL object like image files.',
         'image_manipulation_library_available' => 'There is no PHP image manipulation library (gd or imagick) available on your server.'
     ];
@@ -33,7 +33,7 @@ class Validator
      *
      * @return void
      */
-    private function checkExtensions()
+    protected function checkExtensions()
     {
         $extensions                                             = [ 'gd', 'imagick' ];
         $this->protocol['extensions']                           = [ ];
@@ -55,7 +55,7 @@ class Validator
      *
      * @return void
      */
-    private function checkFilesystemConfigurationOptions()
+    protected function checkFilesystemConfigurationOptions()
     {
         $this->protocol['allow_url_fopen'] = ini_get( 'allow_url_fopen' );
     }
@@ -70,7 +70,7 @@ class Validator
         $translation = [ ];
 
         foreach ($this->protocol as $key => $entry) {
-            if (false === $entry && $this->protocolErrorTranslations[$key]) {
+            if (false === $entry && isset($this->protocolErrorTranslations[$key])) {
                 $translation[$key] = $this->protocolErrorTranslations[$key];
             }
         }
